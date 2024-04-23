@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa6dc04d-f5f9-47be-9fcf-17cd63ba8295" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/Result.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/Result.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/Stimulus.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/Stimulus.js" afterDir="false" />
-    </list>
+    <list default="true" id="aa6dc04d-f5f9-47be-9fcf-17cd63ba8295" name="Changes" comment="dhuiasdhsa" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,11 +59,24 @@
       <workItem from="1713359196023" duration="6577000" />
       <workItem from="1713512102903" duration="26000" />
       <workItem from="1713869815532" duration="85000" />
-      <workItem from="1713873247748" duration="2467000" />
+      <workItem from="1713873247748" duration="2496000" />
     </task>
+    <task id="LOCAL-00001" summary="dhuiasdhsa">
+      <option name="closed" value="true" />
+      <created>1713875748030</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713875748030</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="dhuiasdhsa" />
+    <option name="LAST_COMMIT_MESSAGE" value="dhuiasdhsa" />
   </component>
 </project>
