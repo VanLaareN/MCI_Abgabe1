@@ -16,7 +16,7 @@ function showResults(){
     countElement.textContent = 'Count: ' + times.length;
     meanElement.textContent = 'Mean: ' + Math.round(meanDeltaTime) + ' ms';
     stdDevElement.textContent = 'SD: ' + Math.round(stdDev) + ' ms';
-    errorRateElement.textContent = 'Overall Error Rate: ' + errorRate.toFixed(2) + '%';
+    //errorRateElement.textContent = 'Overall Error Rate: ' + errorRate.toFixed(2) + '%';
 
     if(purpleTimes.length > 0){
         let purpleMean = getMean(purpleTimes);
@@ -24,8 +24,7 @@ function showResults(){
         let purpleErrorRate = (purpleTimes.length / (purpleTimes.length + orangeTimes.length)) * 100;
 
         purpleResultElement.textContent = 'Purple Stimulus Results: Count: ' + purpleTimes.length +
-            ', Mean: ' + Math.round(purpleMean) + ' ms, SD: ' + Math.round(purpleStdDev) + ' ms, Error Rate: ' +
-            purpleErrorRate.toFixed(2) + '%';
+            ', Mean: ' + Math.round(purpleMean) + ' ms, SD: ' + Math.round(purpleStdDev) + ' ms';
     }
 
     if (orangeTimes.length > 0) {
@@ -34,7 +33,6 @@ function showResults(){
         let orangeErrorRate = (orangeTimes.length / (purpleTimes.length + orangeTimes.length)) * 100;
 
         orangeResultElement.textContent = 'Orange Stimulus Results: Count: ' + orangeTimes.length +
-            ', Mean: ' + Math.round(orangeMean) + ' ms, SD: ' + Math.round(orangeStdDev) + ' ms, Error Rate: ' +
-            orangeErrorRate.toFixed(2) + '%';
+            ', Mean: ' + Math.round(orangeMean) + ' ms, SD: ' + Math.round(orangeStdDev) + ' ms';
     }
 }

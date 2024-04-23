@@ -43,11 +43,11 @@ function startTestTrial() {
     if (shape === 'square') {
         // valid stimulus, wait for response
         instructionElement.textContent = 'Press space when you see a square (purple or orange)!';
-        setTimeout(startTestTrial, 2000+Math.random() * 4000); // 0 to 6 seconds timeout
+        setTimeout(startTestTrial, Math.floor(Math.random() * (6000 - 2000 + 1)) + 2000); // 0 to 6 seconds timeout
     } else {
         // invalid stimulus, wait for timeout
         instructionElement.textContent = 'Wait for the next stimulus.';
-        setTimeout(startTestTrial, 2000+Math.random() * 4000); // 0 to 6 seconds timeout
+        setTimeout(startTestTrial, Math.floor(Math.random() * (6000 - 2000 + 1)) + 2000); // 0 to 6 seconds timeout
     }
 }
 
