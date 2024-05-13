@@ -88,13 +88,20 @@
 
     }
 
+    function Sleep(milliseconds) {
+        return new Promise(resolve => setTimeout(resolve, milliseconds));
+    }
 
-    function startTrial() {
+    function getRandomTimeIntervall(){
+        return  Math.floor(Math.random() * (6 - 2 + 1)) + 2;
+    }
+
+    async function startTrial() {
         let startTime = Date.now();
         let isSquare = showStimulus();
         document.body.addEventListener('keydown', keyHandler); // Add event listener for keyup
 
-        function keyHandler(e) {
+        async function keyHandler(e) {
             if (e.key === " " || e.code === "Space" || e.keyCode === 32) {
                 if (isSquare) {
                     let endTime = Date.now() - startTime;
@@ -104,6 +111,7 @@
                     errorCount += 1;
                     console.log("NO");
                 }
+                await Sleep(getRandomTimeIntervall()*1000);
                 isSquare = showStimulus();
                 startTime = Date.now();
             } else {
@@ -111,7 +119,7 @@
                 statistics();
                 console.log("Mean:" + mean);
                 console.log("Standard Deviation:" + variance);
-                console.log("Error Count" + errorCount);
+                console.log("Error Count " + errorCount);
                 console.log(reactionTimes);
             }
         }

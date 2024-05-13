@@ -86,19 +86,29 @@
         statistics();
     }
 
-    function guess(guess_folder){
+    function Sleep(milliseconds) {
+        return new Promise(resolve => setTimeout(resolve, milliseconds));
+    }
+
+    function getRandomTimeIntervall(){
+        return  Math.floor(Math.random() * (6 - 2 + 1)) + 2;
+    }
+
+    async function guess(guess_folder){
         if(guess_array.folder === guess_folder){
             console.log("yes");
-            guess_array = showRandomImage();
         }
         else{
             console.log("no");
-            guess_array = showRandomImage();
             errors += 1;
         }
         let endTime = Date.now() - startTime;
         tries.push(endTime);
+
+        await Sleep(getRandomTimeIntervall()*1000);
         startTime = Date.now();
+
+        guess_array = showRandomImage();
     }
 
     let guess_array = showRandomImage();

@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa6dc04d-f5f9-47be-9fcf-17cd63ba8295" name="Changes" comment="dhuiasdhsa">
-      <change afterPath="$PROJECT_DIR$/HTML/A1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HTML/A2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/A3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asdasd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="aa6dc04d-f5f9-47be-9fcf-17cd63ba8295" name="Changes" comment="hopefully last one">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/Webpage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/A2.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/A2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/A3.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/A3.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +71,7 @@
       <workItem from="1713512102903" duration="26000" />
       <workItem from="1713869815532" duration="85000" />
       <workItem from="1713873247748" duration="2496000" />
-      <workItem from="1715604324134" duration="12295000" />
+      <workItem from="1715604324134" duration="14142000" />
     </task>
     <task id="LOCAL-00001" summary="dhuiasdhsa">
       <option name="closed" value="true" />
@@ -85,7 +81,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713875748030</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="hopefully last one">
+      <option name="closed" value="true" />
+      <created>1715626689246</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715626689246</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,6 +97,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="dhuiasdhsa" />
-    <option name="LAST_COMMIT_MESSAGE" value="dhuiasdhsa" />
+    <MESSAGE value="hopefully last one" />
+    <option name="LAST_COMMIT_MESSAGE" value="hopefully last one" />
   </component>
 </project>
