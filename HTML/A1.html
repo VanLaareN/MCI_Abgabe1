@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Time Experiment</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        #rectangle {
+            width: 100px;
+            height: 100px;
+            background-color: #f0f0f0;
+            position: absolute;
+            transition: background-color 5s ease;
+        }
+    </style>
+</head>
+<body>
+<div id="rectangle"></div>
+
+<script>
+    // Function to get a random position on the screen
+    function getRandomPosition() {
+        var x = Math.floor(Math.random() * window.innerWidth);
+        var y = Math.floor(Math.random() * window.innerHeight);
+        return { x: x, y: y };
+    }
+
+    // Function to calculate distance from stimulus to center of the screen
+    function calculateDistance(rectangle) {
+        var centerX = window.innerWidth / 2;
+        var centerY = window.innerHeight / 2;
+        var distance = Math.sqrt(Math.pow(rectangle.x - centerX, 2) + Math.pow(rectangle.y - centerY, 2));
+        return distance;
+    }
+
+    // Function to handle key press
+    function handleKeyPress(event) {
+        if (event.keyCode === 32) { // Space key
+            var reactionTime = Date.now() - startTime;
+            var distanceToCenter = calculateDistance(rectanglePosition);
+            reactionTimes.push(reactionTime);
+            distances.push(distanceToCenter);
+            updateStats();
+            clearInterval(colorChangeInterval);
+            initializeStimulus();
+        }
+    }
+
+    // Function to initialize the stimulus
+    function initializeStimulus() {
+        rectanglePosition = getRandomPosition();
+        rectangle.style.left = rectanglePosition.x + "px";
+        rectangle.style.top = rectanglePosition.y + "px";
+        rectangle.style.backgroundColor = "#f0f0f0";
+        startTime = Date.now();
+        colorChangeInterval = setInterval(changeColor, 1000); // Change color over 5 seconds
+    }
+
+    // Function to change color of the rectangle
+    function changeColor() {
+        rectangle.style.backgroundColor = getRandomColor();
+    }
+
+    // Function to get a random color
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    // Function to update statistics on the screen
+    function updateStats() {
+        var meanReactionTime = calculateMean(reactionTimes);
+        var standardDeviation = calculateStandardDeviation(reactionTimes);
+        var errorRate = calculateErrorRate();
+        var correlation = calculateCorrelation();
+        document.getElementById('stats').innerHTML = "Mean Reaction Time: " + meanReactionTime.toFixed(2) + "ms<br>" +
+            "Standard Deviation: " + standardDeviation.toFixed(2) + "ms<br>" +
+            "Error Rate: " + errorRate.toFixed(2) + "%<br>" +
+            "Correlation: " + correlation.toFixed(2);
+    }
+
+    // Function to calculate mean of an array
+    function calculateMean(arr) {
+        var sum = arr.reduce(function(a, b) { return a + b; }, 0);
+        return sum / arr.length;
+    }
+
+    // Function to calculate standard deviation of an array
+    function calculateStandardDeviation(arr) {
+        var mean = calculateMean(arr);
+        var squareDiffs = arr.map(function(value) {
+            var diff = value - mean;
+            return diff * diff;
+        });
+        var avgSquareDiff = calculateMean(squareDiffs);
+        return Math.sqrt(avgSquareDiff);
+    }
+
+    // Function to calculate error rate
+    function calculateErrorRate() {
+        var totalAttempts = reactionTimes.length;
+        var correctAttempts = totalAttempts - errors;
+        return (errors / totalAttempts) * 100;
+    }
+
+    // Function to calculate correlation
+    function calculateCorrelation() {
+        var sumXY = 0;
+        for (var i = 0; i < reactionTimes.length; i++) {
+            sumXY += reactionTimes[i] * distances[i];
+        }
+        var sumX = calculateMean(reactionTimes) * reactionTimes.length;
+        var sumY = calculateMean(distances) * distances.length;
+        var sumX2 = 0;
+        var sumY2 = 0;
+        for (var i = 0; i < reactionTimes.length; i++) {
+            sumX2 += reactionTimes[i] * reactionTimes[i];
+            sumY2 += distances[i] * distances[i];
+        }
+        var correlation = (reactionTimes.length * sumXY - sumX * sumY) / Math.sqrt((reactionTimes.length * sumX2 - sumX * sumX) * (reactionTimes.length * sumY2 - sumY * sumY));
+        return correlation;
+    }
+
+    // Initializing variables
+    var rectangle = document.getElementById('rectangle');
+    var startTime;
+    var colorChangeInterval;
+    var reactionTimes = [];
+    var distances = [];
+    var errors = 0;
+    var rectanglePosition;
+
+    // Event listener for key press
+    window.addEventListener('keypress', handleKeyPress);
+
+    // Initializing the first stimulus
+    initializeStimulus();
+</script>
+
+<div id="stats"></div>
+
+</body>
+</html>

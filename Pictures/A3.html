@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Selector</title>
+</head>
+<body>
+<h1>Dine Guesser</h1>
+<button id="button1">D (German)</button>
+<button id="button2">F (Chinese)</button>
+<button id="button3">G (Mexican)</button>
+<button id="button4">STOP</button>
+<div id="imageContainer"></div>
+
+<script>
+    let errors = 0;
+    let tries = [];
+
+    document.getElementById('button1').addEventListener('click', function() {
+        guess("Germany");
+    });
+
+    document.getElementById('button2').addEventListener('click', function() {
+        guess("China");
+    });
+    document.getElementById('button3').addEventListener('click', function() {
+        guess("Mexico");
+    });
+    document.getElementById('button4').addEventListener('click', function() {
+        end();
+    });
+    function pickRandomString(array) {
+        // Generate a random index within the range of the array's length
+        const randomIndex = Math.floor(Math.random() * array.length);
+
+        // Return the element at the random index
+        return array[randomIndex];
+    }
+
+    function showRandomImage() {
+        let randomNumber = Math.floor(Math.random() * 10) + 1;
+        let folder_names = ["Germany", "China", "Mexico"];
+        let folder = pickRandomString(folder_names);
+        // Construct the image path
+        let imagePath = `${folder}/${randomNumber}.jpg`;
+
+        // Create an image element
+        let imgElement = document.createElement('img');
+        imgElement.src = imagePath;
+        imgElement.width = 500;
+        imgElement.height = 500;
+
+        // Clear previous image if exists
+        let imageContainer = document.getElementById('imageContainer');
+        imageContainer.innerHTML = '';
+
+        // Append the new image to the container
+        imageContainer.appendChild(imgElement);
+
+        //console.log({randomNumber, folder});
+
+        return {randomNumber, folder};
+    }
+
+    function statistics(){
+        let sum = 0;
+        for (let e in tries){
+            sum += e;
+        }
+        let mean = sum/tries.length;
+        sum = 0;
+        for (let e in tries) {
+            sum += Math.pow(e-mean, 2);
+        }
+        let variance = Math.sqrt(sum)/tries.length;
+
+        console.log("MEAN: ", mean);
+        console.log("STD_VAR: ", variance);
+        console.log("ERRORS: ", errors);
+
+
+    }
+
+    function end(){
+        statistics();
+    }
+
+    function guess(guess_folder){
+        if(guess_array.folder === guess_folder){
+            console.log("yes");
+            guess_array = showRandomImage();
+        }
+        else{
+            console.log("no");
+            guess_array = showRandomImage();
+            errors += 1;
+        }
+        let endTime = Date.now() - startTime;
+        tries.push(endTime);
+        startTime = Date.now();
+    }
+
+    let guess_array = showRandomImage();
+    let startTime = Date.now();
+
+
+</script>
+</body>
+</html>

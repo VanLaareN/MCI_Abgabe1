@@ -1,0 +1,7 @@
+const meanReactionTime = reactionTimes.reduce((acc, curr) => acc + curr, 0) / validStimuliCount;
+        const standardDeviation = Math.sqrt(reactionTimes.reduce((acc, curr) => acc + Math.pow(curr - meanReactionTime, 2), 0) / validStimuliCount);
+        const errorRate = errorCount / (validStimuliCount + errorCount);
+
+        console.log('Mean Reaction Time:', meanReactionTime.toFixed(2), 'ms');
+        console.log('Standard Deviation:', standardDeviation.toFixed(2), 'ms');
+        console.log('Error Rate:', (errorRate * 100).toFixed(2), '%');

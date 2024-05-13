@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Stimulus Test</title>
+    <style>
+        #stimulus {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div id="stimulus"></div>
+
+<script>
+    const stimulusDiv = document.getElementById('stimulus');
+
+    function getRandomSize() {
+        return Math.floor(Math.random() * 201) + 100; // Random size between 100 and 300 pixels
+    }
+
+    function getRandomColor() {
+        return Math.random() < 0.5 ? 'purple' : 'orange'; // Equally likely to be purple or orange
+    }
+
+    function createSquare(size, color) {
+        stimulusDiv.innerHTML = ''; // Clear previous stimulus
+        const square = document.createElement('div');
+        square.style.width = `${size}px`;
+        square.style.height = `${size}px`;
+        square.style.backgroundColor = color;
+        square.style.margin = '20px';
+        stimulusDiv.appendChild(square);
+    }
+
+    function createTriangle(size, color) {
+        stimulusDiv.innerHTML = ''; // Clear previous stimulus
+        const triangle = document.createElement('div');
+        triangle.style.width = '0';
+        triangle.style.height = '0';
+        triangle.style.borderLeft = `${size}px solid transparent`;
+        triangle.style.borderRight = `${size}px solid transparent`;
+        triangle.style.borderBottom = `${size}px solid ${color}`;
+        triangle.style.margin = '20px';
+        stimulusDiv.appendChild(triangle);
+    }
+
+    function showStimulus() {
+        const size = getRandomSize();
+        const color = getRandomColor();
+        const isSquare = Math.random() < 0.5; // Equally likely to be square or triangle
+
+        if (isSquare) {
+            createSquare(size, color);
+        } else {
+            createTriangle(size, color); // Timeout for triangles
+        }
+
+        return isSquare;
+    }
+
+    let startTime;
+    let errorCount = 0;
+    let reactionTimes = [];
+    let mean = 0;
+    let variance = 0;
+
+
+
+    function statistics(){
+        let sum = 0;
+        for (let e in reactionTimes){
+            sum += e;
+        }
+        mean = sum/reactionTimes.length;
+        sum = 0;
+        for (let e in reactionTimes) {
+            sum += Math.pow(e-mean, 2);
+        }
+        variance = Math.sqrt(sum)/reactionTimes.length;
+
+    }
+
+
+    function startTrial() {
+        let startTime = Date.now();
+        let isSquare = showStimulus();
+        document.body.addEventListener('keydown', keyHandler); // Add event listener for keyup
+
+        function keyHandler(e) {
+            if (e.key === " " || e.code === "Space" || e.keyCode === 32) {
+                if (isSquare) {
+                    let endTime = Date.now() - startTime;
+                    reactionTimes.push(endTime);
+                    console.log("YES");
+                } else {
+                    errorCount += 1;
+                    console.log("NO");
+                }
+                isSquare = showStimulus();
+                startTime = Date.now();
+            } else {
+                document.body.removeEventListener('keydown', keyHandler);
+                statistics();
+                console.log("Mean:" + mean);
+                console.log("Standard Deviation:" + variance);
+                console.log("Error Count" + errorCount);
+                console.log(reactionTimes);
+            }
+        }
+    }
+    startTrial();
+
+
+</script>
+</body>
+</html>

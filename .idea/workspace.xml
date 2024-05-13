@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa6dc04d-f5f9-47be-9fcf-17cd63ba8295" name="Changes" comment="dhuiasdhsa" />
+    <list default="true" id="aa6dc04d-f5f9-47be-9fcf-17cd63ba8295" name="Changes" comment="dhuiasdhsa">
+      <change afterPath="$PROJECT_DIR$/HTML/A1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML/A2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pictures/A3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asdasd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/Webpage.html" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,9 +22,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package.json" />
-        <option value="HTML File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -48,6 +56,13 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\karlo\Documents\MCI_Abgabe1\Pictures" />
+      <recent name="C:\Users\karlo\Documents\MCI_Abgabe1\HTML" />
+      <recent name="C:\Users\karlo\Documents\MCI_Abgabe1\Pictures\Germany" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -60,6 +75,7 @@
       <workItem from="1713512102903" duration="26000" />
       <workItem from="1713869815532" duration="85000" />
       <workItem from="1713873247748" duration="2496000" />
+      <workItem from="1715604324134" duration="12295000" />
     </task>
     <task id="LOCAL-00001" summary="dhuiasdhsa">
       <option name="closed" value="true" />
