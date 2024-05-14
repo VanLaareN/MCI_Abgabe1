@@ -27,6 +27,7 @@
 
 <script>
     let transparencyChange;
+    let initializeStimulusTimeout;
     // Function to get a random position on the screen
     function getRandomPosition() {
         var x = Math.floor(Math.random() * (window.innerWidth-100));
@@ -51,8 +52,13 @@
             distances.push(distanceToCenter);
             updateStats();
             clearInterval(colorChangeInterval);
-            initializeStimulus();
+            waitAndInitializeStimulus();
         }
+    }
+
+    function waitAndInitializeStimulus(){
+        clearInterval(initializeStimulusTimeout);
+        initializeStimulusTimeout = setTimeout(initializeStimulus, getRandomTimeIntervall()*1000);
     }
 
     function Sleep(milliseconds) {
@@ -170,7 +176,7 @@
     window.addEventListener('keypress', handleKeyPress);
 
     // Initializing the first stimulus
-    initializeStimulus();
+    waitAndInitializeStimulus();
 </script>
 
 <div id="stats"></div>
