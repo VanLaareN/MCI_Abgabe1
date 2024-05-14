@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa6dc04d-f5f9-47be-9fcf-17cd63ba8295" name="Changes" comment="hopefully last one">
+    <list default="true" id="aa6dc04d-f5f9-47be-9fcf-17cd63ba8295" name="Changes" comment="hopefully last one!!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/A1.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/A1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HTML/A2.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/A2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/A3.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/A3.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +26,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;VanLaareN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="3c8d1a85-de5b-4032-995e-57956e0f1ead" />
+        <option name="url" value="https://github.com/VanLaareN/MCI_Abgabe1.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -71,7 +85,9 @@
       <workItem from="1713512102903" duration="26000" />
       <workItem from="1713869815532" duration="85000" />
       <workItem from="1713873247748" duration="2496000" />
-      <workItem from="1715604324134" duration="14142000" />
+      <workItem from="1715604324134" duration="14775000" />
+      <workItem from="1715681980241" duration="5000" />
+      <workItem from="1715688472016" duration="5581000" />
     </task>
     <task id="LOCAL-00001" summary="dhuiasdhsa">
       <option name="closed" value="true" />
@@ -89,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715626689246</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="hopefully last one!!!">
+      <option name="closed" value="true" />
+      <created>1715630172081</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715630172081</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,6 +122,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="dhuiasdhsa" />
     <MESSAGE value="hopefully last one" />
-    <option name="LAST_COMMIT_MESSAGE" value="hopefully last one" />
+    <MESSAGE value="hopefully last one!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="hopefully last one!!!" />
   </component>
 </project>

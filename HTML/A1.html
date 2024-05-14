@@ -18,7 +18,7 @@
             height: 100px;
             background-color: #f0f0f0;
             position: absolute;
-            transition: background-color 5s ease;
+            transition: background-color 5s;
         }
     </style>
 </head>
@@ -28,8 +28,8 @@
 <script>
     // Function to get a random position on the screen
     function getRandomPosition() {
-        var x = Math.floor(Math.random() * window.innerWidth);
-        var y = Math.floor(Math.random() * window.innerHeight);
+        var x = Math.floor(Math.random() * (window.innerWidth-100));
+        var y = Math.floor(Math.random() * (window.innerHeight-100));
         return { x: x, y: y };
     }
 
@@ -54,14 +54,21 @@
         }
     }
 
+    function Sleep(milliseconds) {
+        return new Promise(resolve => setTimeout(resolve, milliseconds));
+    }
+
+    function getRandomTimeIntervall(){
+        return  Math.floor(Math.random() * (6 - 2 + 1)) + 2;
+    }
+
     // Function to initialize the stimulus
-    function initializeStimulus() {
+    async function initializeStimulus() {
         rectanglePosition = getRandomPosition();
         rectangle.style.left = rectanglePosition.x + "px";
         rectangle.style.top = rectanglePosition.y + "px";
-        rectangle.style.backgroundColor = "#f0f0f0";
         startTime = Date.now();
-        colorChangeInterval = setInterval(changeColor, 1000); // Change color over 5 seconds
+        changeColor();
     }
 
     // Function to change color of the rectangle
@@ -71,11 +78,8 @@
 
     // Function to get a random color
     function getRandomColor() {
-        var letters = '0123456789ABCDEF';
-        var color = '#';
-        for (var i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
+        let letters = '0123456789ABCDEF';
+        let color = '#f0f0f0';
         return color;
     }
 
