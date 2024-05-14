@@ -26,6 +26,7 @@
 <div id="rectangle"></div>
 
 <script>
+    let transparencyChange;
     // Function to get a random position on the screen
     function getRandomPosition() {
         var x = Math.floor(Math.random() * (window.innerWidth-100));
@@ -62,12 +63,31 @@
         return  Math.floor(Math.random() * (6 - 2 + 1)) + 2;
     }
 
+    function setStimulusTransparency(opacity) {
+        rectangle.style.opacity = opacity;
+    }
+
     // Function to initialize the stimulus
     async function initializeStimulus() {
+        clearInterval(transparencyChange);
+        rectangle.style.opacity = 0;
         rectanglePosition = getRandomPosition();
         rectangle.style.left = rectanglePosition.x + "px";
         rectangle.style.top = rectanglePosition.y + "px";
+        let stimulusIsVisible = true;
         startTime = Date.now();
+        const increase = 1;
+        let t = 0;
+        transparencyChange = setInterval(()=>{ t += increase
+            setStimulusTransparency(t/10);
+            if (t >= 10){
+                clearInterval(transparencyChange);
+            }
+
+            if(stimulusIsVisible === false){
+                clearInterval(transparencyChange);
+            }
+        }, 500);
         changeColor();
     }
 
@@ -79,7 +99,7 @@
     // Function to get a random color
     function getRandomColor() {
         let letters = '0123456789ABCDEF';
-        let color = '#f0f0f0';
+        let color = '#ff0000';
         return color;
     }
 
