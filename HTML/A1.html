@@ -52,11 +52,14 @@
             distances.push(distanceToCenter);
             updateStats();
             clearInterval(colorChangeInterval);
+            clearInterval(transparencyChange);
+            clearInterval(initializeStimulusTimeout);
             waitAndInitializeStimulus();
         }
     }
 
     function waitAndInitializeStimulus(){
+        rectangle.style.opacity = 0;
         clearInterval(initializeStimulusTimeout);
         initializeStimulusTimeout = setTimeout(initializeStimulus, getRandomTimeIntervall()*1000);
     }
@@ -76,7 +79,6 @@
     // Function to initialize the stimulus
     async function initializeStimulus() {
         clearInterval(transparencyChange);
-        rectangle.style.opacity = 0;
         rectanglePosition = getRandomPosition();
         rectangle.style.left = rectanglePosition.x + "px";
         rectangle.style.top = rectanglePosition.y + "px";
